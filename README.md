@@ -4,7 +4,7 @@ Remote DLL injection works by injecting a DLL (the payload) on disk into a remot
 
 ## Step-by-step approach
 
-- Step 1: Get the functionLoadLibraryA
+- Step 1: Get the function, LoadLibraryA
 - Step 2: Open the target process specified by the user of the injector
 - Step 3: Allocate space for the DLL
 - Step 4: Write the DLL location to the space we allocated in step 3
