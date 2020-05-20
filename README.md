@@ -10,3 +10,15 @@ Remote DLL injection works by injecting a DLL (the payload) on disk into a remot
 - Step 4: Write the DLL location to the space we allocated in step 3
 - Step 5: Launch the DLL usingLoadLibraryAfrom step 1
 - Step 6: Close handles
+
+## Info
+
+#### Operation system, project, etc.
+
+- IDE: Visual Studio 2019 (x86 project).
+- OS: Windows 10, version 1909.
+
+#### User Guide
+
+
+
