@@ -2,7 +2,7 @@
 
 Remote DLL injection works by injecting a DLL (the payload) on disk into a remote process that calls LoadLibrary (or the native LdrLoadDll), thereby forcing a DLL to be loaded in the context of that process. Once the remote process loads the DLL, the OS automatically calls the DLL’s DllMain function, which is defined by the creator of the DLL. This function contains the hack and has as much access to the system as theprocess in which it is running. 
 
-## Step by step approach
+## Step-by-step approach
 
 - Step 1: Get the functionLoadLibraryA
 - Step 2: Open the target process specified by the user of the injector
