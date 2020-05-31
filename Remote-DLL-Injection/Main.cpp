@@ -1,43 +1,78 @@
 #include <iostream>
 #include <windows.h>
-#include "Injection.h"
-#include "Utility.h"
-#include "ConsoleColors.h"
-#include "Config.h"
+#include "Injection/Injection.h"
+#include "Utility/Utility.h"
+#include "Console/ConsoleColors.h"
+#include "Config/Config.h"
+#include "ConfigParser/ConfigParser.h"
 
 int main() {
 
-    Config config("\\config.ini");
     ConsoleColors color;
 
     color.SetColor(White);
 
-    char fullDllPath[MAX_PATH];
-    char processName[MAX_PATH];
+    std::cout << "\n=======================  REMOTE DLL INJECTION  =======================" << std::endl;
 
-    config.GetSetting(fullDllPath, "Config", "PayloadPath");
-    config.GetSetting(processName, "Config", "TargetProcess");
+    //Create folder and ini file with content (if it doesn't exist)
+    std::string configPath = VerifyINI("Injector", "config.ini", { "[Config]", "DLLs=", "msDelay=", "TargetProcess=" });
+    std::cout << "ConfigPath:    " << configPath << std::endl;
 
-    std::cout << "--- CONFIG.INI ---\n" << std::endl;
-    std::cout << "Config.ini path:  " << config.path << std::endl;
-    std::cout << "Payload path:     " << fullDllPath << std::endl;
-    std::cout << "Taget process:    " << processName << std::endl;
+    // Read .ini file 
+    std::string DLLs = ReadKey("Config", "DLLs", configPath);
+    std::string Delay = ReadKey("Config", "msDelay", configPath);
+    std::string TargetProcess = ReadKey("Config", "TargetProcess", configPath);
 
-    DWORD processID = getProcessID(processName);
+    std::cout << "DLLs:          " << DLLs << std::endl;
+    std::cout << "Delay (ms):    " << Delay << " (between each injection)" << std::endl;
+    std::cout << "TargetProcess: " << TargetProcess << std::endl;
 
-    std::cout << "\n--- REMOTE DLL INJECTION ---\n" << std::endl;
-    if (!InjectDLL(fullDllPath, processID)) {
-        color.SetColor(Green);
-        std::cout << "[+] DLL injection: SUCCESS\n" << std::endl;
-    }
-    else {
+    std::cout << "======================================================================" << "\n" << std::endl;
+    DWORD processID = getProcessID(TargetProcess.c_str());
+
+    unsigned int delay = ParseDelay(Delay);
+
+    // Parse config
+    std::vector<std::string> dlls = ParseFileNames(DLLs);
+
+    // Catch if no DLL's are given in the config.ini file:
+    if (dlls.size() == 0) 
+    {
+        std::cout << "\nERROR MSG: No DLL names found in " << configPath << std::endl;
+
         color.SetColor(Red);
-        std::cout << "[-] DLL injection: FAILED\n" << std::endl;
+        std::cout << "\n[-] DLL injection: FAILED\n" << std::endl;
+        color.SetColor(White);
+
+        std::cout << "Exiting in 15 seconds..." << std::endl;
+        Sleep(10000);
+    
+        return 1;
     }
 
-    color.SetColor(White);
+    for (size_t i = 0; i < dlls.size(); i++) {
+        
+        if (InjectDLL(dlls[i].c_str(), processID)) {
 
-    std::cout << "Exiting in 30 seconds..." << std::endl;
-    Sleep(30000);
+            color.SetColor(Green);
+            std::cout << "\n[+] SUCCESS injecting " << dlls[i] << std::endl;
+            color.SetColor(White);
+            Sleep(delay);
+        }
+        else
+        {
+            color.SetColor(Red);
+            std::cout << "\n[+] FAILED injecting " << dlls[i] << std::endl;
+            color.SetColor(White);
+
+            std::cout << "Exiting in 15 seconds..." << std::endl;
+            Sleep(10000);
+        }
+    }
+
+   
+
+    Sleep(5000);
+
     return 0;
 }
