@@ -1,9 +1,9 @@
-#include "pch.h"
 #include "..\Remote-DLL-Injection\Injection\Injection.h"
+#include "gtest/gtest.h"
 
-//  *************************************
-//   Testing edge cases for the injector
-//  *************************************
+//  ***********************************
+//  Testing edge cases for the injector
+//  ***********************************
 
 // Correct path to file?
 TEST(DllPath, Invalid)
