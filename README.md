@@ -17,7 +17,7 @@ Remote DLL injection works by injecting a DLL (the payload) on disk into a remot
 
 - IDE: Visual Studio 2019 (x86 project).
 - OS: Windows 10, version 1909.
-- Unit test framework: [https://github.com/google/googletest]
+- Unit test framework: https://github.com/google/googletest
 
 
 
