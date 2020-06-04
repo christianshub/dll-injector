@@ -7,14 +7,6 @@
 #include <vector>
 #include <sstream>
 
-namespace wtf {
-
-	int testss(std::string in);
-	
-	
-}
-
-
 /// <summary>
 /// Gets desktop path
 /// </summary>

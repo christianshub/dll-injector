@@ -1,13 +1,5 @@
 #include "Config.h"
 
-int wtf::testss(std::string in)
-{
-	if (in == "test") {
-		return 0;
-	}
-	return 1;
-}
-
 std::string GetDesktopPath() {
 
 	CHAR path[MAX_PATH];

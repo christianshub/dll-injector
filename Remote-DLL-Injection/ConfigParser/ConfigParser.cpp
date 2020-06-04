@@ -51,7 +51,5 @@ std::vector<std::string> ParseFileNames(std::string& names)
         container.push_back(substr);
     }
 
-    //if (container.length() < )
-
     return container;
 }

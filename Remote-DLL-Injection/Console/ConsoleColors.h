@@ -12,6 +12,9 @@ enum Color {
 	Grey		= 8
 };
 
+/// <summary>
+/// Small class to add console colors
+/// </summary>
 class ConsoleColors
 {
 private:

@@ -1,5 +1,7 @@
 #pragma once
 #include <windows.h>
 
-// Returns PID
+/// <summary>
+/// Retrieves process ID from an open application window.
+/// </summary>
 DWORD getProcessID(LPCSTR);
