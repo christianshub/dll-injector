@@ -22,7 +22,7 @@ unsigned int ParseDelay(std::string& delay)
         return 0;
     }
 
-    // Check for non numbers
+    // Check for non-numerics
     if (delay.find_first_not_of("0123456789") != std::string::npos)
     {
         std::cout << "Delay can only contain numbers: 0123456789" << std::endl;

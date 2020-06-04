@@ -15,7 +15,7 @@ int main() {
     std::cout << "\n=======================  REMOTE DLL INJECTION  =======================" << std::endl;
 
     //Create folder and ini file with content (if it doesn't exist)
-    std::string configPath = VerifyINI("Injector", "config.ini", { "[Config]", "DLLs=", "msDelay=", "TargetProcess=" });
+    std::string configPath = VerifyINI("Injector", "config.ini", { "[Config]", "DLLs=", "msDelay=", "TargetProcess=", });
     std::cout << "ConfigPath:    " << configPath << std::endl;
 
     // Read .ini file 
@@ -28,6 +28,7 @@ int main() {
     std::cout << "TargetProcess: " << TargetProcess << std::endl;
 
     std::cout << "======================================================================" << "\n" << std::endl;
+
     DWORD processID = getProcessID(TargetProcess.c_str());
 
     unsigned int delay = ParseDelay(Delay);
@@ -65,7 +66,7 @@ int main() {
             std::cout << "\n[+] FAILED injecting " << dlls[i] << std::endl;
             color.SetColor(White);
 
-            std::cout << "Exiting in 15 seconds..." << std::endl;
+            std::cout << "\nExiting in 15 seconds..." << std::endl;
             Sleep(10000);
         }
     }

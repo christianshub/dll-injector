@@ -1,5 +1,13 @@
 #include "Config.h"
 
+int wtf::testss(std::string in)
+{
+	if (in == "test") {
+		return 0;
+	}
+	return 1;
+}
+
 std::string GetDesktopPath() {
 
 	CHAR path[MAX_PATH];
@@ -11,19 +19,6 @@ std::string GetDesktopPath() {
 	}
 	return "Couldn't retrieve desktop path\n";
 }
-
-//std::string GetDesktopPath() {
-//
-//	TCHAR path[MAX_PATH];
-//	HRESULT hRes = SHGetFolderPath(NULL, CSIDL_DESKTOP, 0, NULL, path);
-//
-//	if (SUCCEEDED(hRes))
-//	{
-//		std::wstring wstr = path;
-//		return (std::string(WSTRING_TO_STRING(wstr)) + "\\");
-//	}
-//	std::cerr << "Couldn't retrieve desktop path\n";
-//}
 
 std::string EraseAllSubStr(std::string& mainStr, const std::string& toErase)
 {
@@ -68,16 +63,19 @@ bool VerifyConfig(std::string filepath, std::vector<std::string> content)
 
 	if (!test)
 	{
-		std::cout << "Creating folder and config, please fill it out..." << std::endl;
-		Sleep(5000);
+		std::cout << "\nCreating folder and config, please fill it out." << std::endl;
+		std::cout << "See " << filepath << std::endl;
 
 		std::ofstream outfile(filepath);
 		for (unsigned int i = 0; i < content.size(); i++)
 		{
-			outfile << content[i] << std::endl;
+			outfile << content[i] << "\n";
 		}
 		integrityAccepted = false;
 		outfile.close();
+
+		Sleep(10000);
+		std::exit(1);
 	}
 
 	return integrityAccepted;
