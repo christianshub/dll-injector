@@ -21,15 +21,15 @@ Remote DLL injection works by injecting a DLL (the payload) on disk into a remot
 
 ### Successful injection
 
-<img src="https://github.com/christianshub/DLL-Injector/blob/master/Snapshots/Success.png" height="200" width="600">
+<img src="https://github.com/christianshub/DLL-Injector/blob/master/Snapshots/Success.png" height="300" width="600">
 
 ### Failed injection: No target process open
 
-<img src="https://github.com/christianshub/DLL-Injector/blob/master/Snapshots/Fail1.png" height="200" width="600">
+<img src="https://github.com/christianshub/DLL-Injector/blob/master/Snapshots/Fail1.png" height="300" width="600">
 
 ### Failed injection: No target name in config.ini:
 
-<img src="https://github.com/christianshub/DLL-Injector/blob/master/Snapshots/Fail2.png" height="200" width="600">
+<img src="https://github.com/christianshub/DLL-Injector/blob/master/Snapshots/Fail2.png" height="300" width="600">
 
 
 
