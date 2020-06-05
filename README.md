@@ -11,9 +11,7 @@ Remote DLL injection works by injecting a DLL (the payload) on disk into a remot
 - Step 5: Launch the DLL using `LoadLibraryA` from step 1
 - Step 6: Close handles
 
-## Info
-
-### Operation system, project, etc.
+## Operation system, project, etc.
 
 - IDE: Visual Studio 2019 (x86 project).
 - OS: Windows 10, version 1909.
@@ -25,11 +23,11 @@ Remote DLL injection works by injecting a DLL (the payload) on disk into a remot
 
 <img src="https://github.com/christianshub/DLL-Injector/blob/master/Snapshots/Success.png" height="200" width="600">
 
-#### Failed injection: No target process open
+### Failed injection: No target process open
 
 <img src="https://github.com/christianshub/DLL-Injector/blob/master/Snapshots/Fail1.png" height="200" width="600">
 
-#### Failed injection: No target name in config.ini:
+### Failed injection: No target name in config.ini:
 
 <img src="https://github.com/christianshub/DLL-Injector/blob/master/Snapshots/Fail2.png" height="200" width="600">
 
