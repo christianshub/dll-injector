@@ -33,7 +33,7 @@ Remote DLL injection works by injecting a DLL (the payload) on disk into a remot
 
 
 
-### Creation approach
+## Creation approach
 
 - Step 1: Get the function, `LoadLibraryA`
 - Step 2: Open the target process specified by the user of the injector
@@ -42,6 +42,7 @@ Remote DLL injection works by injecting a DLL (the payload) on disk into a remot
 - Step 5: Launch the DLL using `LoadLibraryA` from step 1
 - Step 6: Close handles
 
-### Credits
+## References
+
 
 - Practical Malware Analysis, M. Sikorski and A. Honig, 2012, No Starch Press, ISBN: 978-1-59327-290-6, p. 254-257
