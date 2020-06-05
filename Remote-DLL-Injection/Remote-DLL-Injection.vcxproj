@@ -152,7 +152,8 @@
     <ClCompile Include="Console\ConsoleColors.cpp" />
     <ClCompile Include="Injection\Injection.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Utility\Utility.cpp" />
+    <ClCompile Include="Utility\ProcessInfo.cpp" />
+    <ClCompile Include="Utility\StrManipulation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConfigParser\ConfigParser.h" />
@@ -160,7 +161,8 @@
     <ClInclude Include="Console\ConsoleColors.h" />
     <ClInclude Include="Injection\Injection.h" />
     <ClInclude Include="Icon\resource.h" />
-    <ClInclude Include="Utility\Utility.h" />
+    <ClInclude Include="Utility\ProcessInfo.h" />
+    <ClInclude Include="Utility\StrManipulation.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Icon\Remote-DLL-Injection.rc" />

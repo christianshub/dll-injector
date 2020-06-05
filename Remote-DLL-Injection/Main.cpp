@@ -1,7 +1,7 @@
 #include <iostream>
 #include <windows.h>
 #include "Injection/Injection.h"
-#include "Utility/Utility.h"
+#include "Utility/ProcessInfo.h"
 #include "Console/ConsoleColors.h"
 #include "Config/Config.h"
 #include "ConfigParser/ConfigParser.h"
@@ -29,7 +29,7 @@ int main() {
 
     std::cout << "======================================================================" << "\n" << std::endl;
 
-    DWORD processID = getProcessID(TargetProcess.c_str());
+    
 
     unsigned int delay = ParseDelay(Delay);
 
@@ -53,12 +53,15 @@ int main() {
 
     for (size_t i = 0; i < dlls.size(); i++) {
         
+        Sleep(delay);
+
+        DWORD processID = getProcessID(TargetProcess.c_str());
+
         if (InjectDLL(dlls[i].c_str(), processID)) {
 
             color.SetColor(Green);
             std::cout << "\n[+] SUCCESS injecting " << dlls[i] << std::endl;
             color.SetColor(White);
-            Sleep(delay);
         }
         else
         {

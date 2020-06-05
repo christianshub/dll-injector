@@ -1,17 +1,5 @@
 #include "ConfigParser.h"
 
-std::string ReplaceAllSubStr(std::string& mainStr, const std::string toBeReplaced, const std::string replaceWith)
-{
-    size_t pos = std::string::npos;
-    while ((pos = mainStr.find(toBeReplaced)) != std::string::npos)
-    {
-        mainStr.replace(pos, toBeReplaced.length(), replaceWith);
-    }
-
-    return mainStr;
-}
-
-
 unsigned int ParseDelay(std::string& delay)
 {
     // Remove spaces
