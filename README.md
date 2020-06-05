@@ -11,11 +11,11 @@ ur
 ## Setup
 
 1. Compile the source code
-2. Run it one time - a folder and config.ini prototype should be created on your desktop.
-3. Navigate to Desktop/Injector/config.ini and open it.
-4. Fill in info about your payload path
+2. Run it one time - a folder and a `config.ini` file should be created on your desktop.
+3. Navigate to `Desktop/Injector/config.ini`.
+4. Fill in info about your payload path.
 5. Fill in info about your target process' window name.
-6. Execute Remote-DLL-Injector.exe
+6. Execute Remote-DLL-Injector.exe.
 
 ## Snapshots
 
@@ -41,3 +41,7 @@ ur
 - Step 4: Write the DLL location to the space we allocated in step 3
 - Step 5: Launch the DLL using `LoadLibraryA` from step 1
 - Step 6: Close handles
+
+### Credits
+
+- Practical Malware Analysis, M. Sikorski and A. Honig, 2012, No Starch Press, ISBN: 978-1-59327-290-6, p. 254-257
