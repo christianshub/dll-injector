@@ -5,11 +5,7 @@
 #include <vector>
 #include <sstream>
 #include <algorithm>
-
-/// <summary>
-/// Replaces a substring from a string.
-/// </summary>
-std::string ReplaceAllSubStr(std::string& mainStr, const std::string toBeReplaced, const std::string replaceWith);
+#include "../Utility/StrManipulation.h"
 
 /// <summary>
 /// Parses user input. Should catch some typos from the user.

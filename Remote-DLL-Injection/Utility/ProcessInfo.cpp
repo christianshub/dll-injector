@@ -1,5 +1,4 @@
-#include "Utility.h"
-#include <iostream>
+#include "ProcessInfo.h"
 
 DWORD getProcessID(LPCSTR processName) 
 {
