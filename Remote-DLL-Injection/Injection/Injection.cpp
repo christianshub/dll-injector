@@ -12,6 +12,7 @@ bool InjectDLL(const char* fullDllPath, DWORD processID)
 
     // Step 1: Get the address of kernel32.dll's exported function: LoadLibraryA
     LPVOID loadLibrary = GetProcAddress(GetModuleHandleA("kernel32.dll"), "LoadLibraryA");
+
     if (!loadLibrary)
     {
         std::cout << "\nERROR MSG: Could not get address kernel32.dll's LoadLibraryA." << std::endl;
