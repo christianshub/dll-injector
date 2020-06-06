@@ -27,7 +27,7 @@ Remote DLL injection works by injecting a DLL (the payload) on disk into a remot
 
 <img src="https://github.com/christianshub/DLL-Injector/blob/master/Snapshots/Fail1.png" height="300" width="600">
 
-### Failed injection: No target name in config.ini:
+### Failed injection: No DLL(s) inserted into config.ini:
 
 <img src="https://github.com/christianshub/DLL-Injector/blob/master/Snapshots/Fail2.png" height="300" width="600">
 
